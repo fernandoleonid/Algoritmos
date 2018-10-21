@@ -23,10 +23,6 @@ function render() {
   });
 }
 
-professor2 = aluno => 'profissional'
-
-alert (professor2());
-
 function cadastraNome2(event) {
   let novoNome = prompt('Qual o nome da pessoa?');
   nomes.push(novoNome);
