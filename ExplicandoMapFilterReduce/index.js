@@ -110,8 +110,17 @@ const total = numeros.reduce( (acc,valor) => acc + valor );
 const totalSalarios = clientes.reduce((total, cliente)=> total + cliente.salario, 0);
 
 
+
+//Problema: Total de salários dos clientes de Jandira
+
+const SalariosJandira = clientes
+   .filter(cliente => cliente.cidade == "Jandira")
+   .map(cliente => cliente.salario + 1000)
+   .reduce((tot, salario) => tot + salario); 
+                              
+
 //saída
 
 //console.log(numeros);
-console.log(total);
-console.log(totalSalarios)
+clientes[2].nome = "SENAI"
+console.log(clientes);

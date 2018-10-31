@@ -2,7 +2,10 @@
 const btnCadastrar = document.getElementById('cadastrar');
 const btnAtualizar = document.getElementById('atualizar');
 const btnDeletar = document.getElementById('deletar');
-const bd = [];
+const bd = [
+   "Fernando",
+   "Ana"
+];
 
 carregarTabela = () => {
    const tb = document.getElementById('bd')

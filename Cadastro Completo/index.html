@@ -1,0 +1,84 @@
+<html>
+   <head> 
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="cadastro.css">
+   </head>
+   <body>
+      
+      <div id=form>
+      <header>
+         <h1> Cadastro de Alunos  </h1>
+      </header>  
+      <fieldset> 
+         <div class='grupo1'>
+            <label> Nome: </label>
+            <input type="text" id="nome"/>
+         </div>
+      </fieldset>
+      <fieldset>
+         <div class='grupo1'>
+            <label>Sexo: </label>
+            <label><input type="radio" name="sexo" id="masculino"> Masculino</label>
+            <label><input type="radio" name="sexo" id="feminino"> Feminino</label>
+         </div>
+      </fieldset>
+      <fieldset>
+         <div class='grupo2'>
+            <label>E-mail:</label>
+            <input type="text" id="email"/>
+         </div>
+         <div class='grupo2'>
+            <label>Celular:</label>
+            <input type="text" id="celular"/>
+         </div>
+         <div>
+      </fieldset>
+      <fieldset>
+         <div class="grupo2">
+            <label>Endereço:</label>
+            <input type="text" id="endereco"/>
+         </div>
+         <div class='grupo4'>
+            <label>Numero:</label>
+            <input type="text" id="numero"/>
+         </div>
+         <div class='grupo4'>
+            <label>Bairro:</label>
+            <input type="text" id="bairro"/>
+         </div>
+         <div class="grupo3" >
+            <label>Cidade:</label>
+            <input type="text" id="cidade"/>
+         </div>
+         <div class="grupo3">
+            <label>Estado:</label>
+               <select name="estado" id="estado">
+                  <option value="sp">SP</option>
+                  <option value="rj">RJ</option>
+                  <option value="mg">MG</option>
+                  <option value="es">ES</option>
+               </select>
+         </div>
+         <div class="grupo3">
+            <label>CEP:</label>
+            <input type="text" id="endereco"/>
+         </div>
+      </fieldset>
+      <!-- <fieldset>
+         <div class="grupo1">
+            <label>Obs.:</label>
+            <textarea id="obs"></textarea>
+         </div>
+      </fieldset> -->
+      <fieldset class="btn">
+         <button id='cadastrar'>Cadastrar nome</button>
+         <button id='atualizar'>Atualiza nome</button>
+         <button id='deletar'>Deleta nome</button>
+      </fieldset>
+
+      <!--Tabela para visualizar as informações-->
+      <table id='bd'></table>
+   </div> 
+      <script src="./cadastro.js"></script>
+   </body>
+</html>
