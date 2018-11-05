@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+<body>
+   <div>
+      <input type="text" id="txt"/>
+      <input type="button" value="teste" id="btn"/>
+   </div>   
+   <div id="texto">
+
+   </div>
+   <script>
+      const txtDigitado = document.getElementById('txt');
+      const btnOk = document.getElementById('btn');
+      const texto = document.getElementById('texto');
+
+      btnOk.addEventListener('click',()=>{
+         texto.innerHTML = `<h1>${txtDigitado.value}</h1>`; 
+      })
+   </script>
+</body>
+</html>
