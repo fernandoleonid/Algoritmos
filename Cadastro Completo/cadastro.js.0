@@ -14,6 +14,8 @@ const btnCadastrar = document.getElementById('cadastrar');
 const btnAtualizar = document.getElementById('atualizar');
 const btnDeletar = document.getElementById('deletar');
 let codigo = 2;
+let indiceAtual = -1; // -1 índice não encontrado.
+
 const bd = [{
    codigo:1,
    nome:"Fernando",
@@ -24,7 +26,7 @@ const bd = [{
    numero: 21,
    Bairro: "Jd. Villaça",
    Cidade: "São Roque",
-   uf: "SP",
+   uf: "RJ",
    cep: "18135300",
 },
 {
@@ -76,29 +78,27 @@ const bd = [{
 //  console.log('Request failure: ', error);  
 // });
 
-const limparCamos = () =>{
-   
+const limparCampos = () =>{
+
+   const elementos = Array.from(document.querySelectorAll('input[type=text], select'));
+   elementos.map(e => e.value="");
+
 }
 
 exibirBD = () => {
    const tb = document.getElementById('bd');
-   tb.innerHTML = `
-      <tr>
-         <th>Código</th>
-         <th>Nome</th>
-         <th>Sexo</th>
-         <th>E-mail</th>
-         <th>Celular</th>
-      </tr>`;
-
-      bd.map((aluno) => tb.innerHTML += `
-      <tr>
-         <td>${aluno.codigo}</td>
-         <td>${aluno.nome}</td>
-         <td>${aluno.sexo}</td>
-         <td>${aluno.email}</td>
-         <td>${aluno.celular}</td>
-      </tr>`);
+      while(tb.firstChild){
+         tb.removeChild(tb.firstChild);
+      };
+      bd.map((aluno) => tb.insertAdjacentHTML('beforeend', `
+         <tr>
+            <td>${aluno.codigo}</td>
+            <td>${aluno.nome}</td>
+            <td>${aluno.sexo}</td>
+            <td>${aluno.email}</td>
+            <td>${aluno.celular}</td>
+         </tr>`)
+      );
 }
 
 
@@ -122,13 +122,35 @@ cadastrarAluno = () => {
    bd.push (novoAluno);
 
    exibirBD();
+   limparCampos();
+}
+
+preencherFormulario = () => {
+   const aluno = bd[indiceAtual];
+   const estados = ['SP','RJ','MG','ES'];
+   const iEstado = estados.indexOf(bd[indiceAtual].uf);
+   const iSexo = aluno.sexo == 'm'? 0 : 1;
+
+   txtNome.value = aluno.nome;
+   rdoSexo[iSexo].checked = true   
+   txtEmail.value = aluno.email;
+   txtCelular.value = aluno.celular;
+   txtEnd.value = aluno.end; 
+   txtNumero.value = aluno.numero;   
+   txtBairro.value = aluno.Bairro;
+   txtCidade.value = aluno.Cidade;
+   cmbEstado.selectedIndex = iEstado;
+   txtCep.value = aluno.cep;   
 }
 
 atualizarNome = () => {
 
-   const id = prompt ('Digite o id para modificar');
-   const nome = prompt("Digite um nome para para alterar!");
-   bd[id] = nome;
+   const codigo = prompt ('Digite o código para modificar');
+   
+   indiceAtual = bd.findIndex(aluno => aluno.codigo == codigo);
+   
+   preencherFormulario ();
+   
 
    exibirBD();
 }

@@ -4,24 +4,34 @@
    padding: 0;
 }
 
+
+
+body{
+   background-position-x: 100%;
+   background-position-y: 100%;
+}
+
 #form{
    /* display: flex; */
    width: 50%;
    margin: 30px auto;
    padding: 10px;
-   background-color: rgba(0,0,0,0.05);
+   background-color: rgba(255,255,255,0.7);
    box-shadow: 3px 3px 18px 3px rgba(0,0,0,1);
    border-radius: 3px;
+   min-width: 500px;
 }
 header h1 {
    background: #1668c4;
    width: 100%;
    color:#fff;
    text-align: center;
+   
 }
 .grupos {
    display: flex;
    justify-content: center;
+   
 }
 
 .grupo {
@@ -96,6 +106,7 @@ table {
    box-shadow:         3px 3px 10px 0px rgba(50, 50, 50, 0.75);
    
 }
+
 th {
    color: #fff;
 }
@@ -105,11 +116,20 @@ td {
    border-radius: 5px;
 }
 
+/* tr:hover {
+   background-color:red;
+   color: #fff;
+ }
+thead tr:hover {
+   background-color:red;
+   background-color: transparent;
+   color: inherit;
+} */
 /* .erro {
    background-color: #ff8f8f;
    
 } */
-.erro, .erro::-webkit-input-placeholder {
+/* .erro, .erro::-webkit-input-placeholder {
    background-color: #e7c3c3;
    color: red;
-}
+} */

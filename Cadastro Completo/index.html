@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <link rel="stylesheet" href="cadastro.css">
    </head>
-   <body>
+   <body ">
       <div id=form>
       <header>
          <h1> Cadastro de Alunos  </h1>
@@ -64,12 +64,7 @@
             <input type="text" id="cep"/>
          </div>
       </div>
-      <!-- <fieldset>
-         <div class="grupo1">
-            <label>Obs.:</label>
-            <textarea id="obs"></textarea>
-         </div>
-      </fieldset> -->
+
       <div class="btn">
          <button id='cadastrar'>Cadastrar nome</button>
          <button id='atualizar'>Atualiza nome</button>
@@ -78,15 +73,21 @@
 
       <!--Tabela para visualizar as informações-->
       <div class='grupos'>
-         <table id='bd'>
-            <tr>
-               <th>Código</th>
-               <th>Nome</th>
-               <th>Sexo</th>
-               <th>E-mail</th>
-               <th>Celular</th>
-            </tr>
+
+         <table >
+            <thead>
+               <tr>
+                  <th>Código</th>
+                  <th>Nome</th>
+                  <th>Sexo</th>
+                  <th>E-mail</th>
+                  <th>Celular</th>
+               </tr>
+            </thead>
+            <tbody id='bd'>
+            </tbody>
          </table> 
+
       </div>
    </div> 
       <script src="./cadastro.js"></script>
