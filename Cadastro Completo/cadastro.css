@@ -98,7 +98,6 @@ button:active{
 }
 
 table {
-   /* flex: 1; */
 	width: 100%;
 	background:#1668c4;
 	-webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
@@ -116,20 +115,6 @@ td {
    border-radius: 5px;
 }
 
-/* tr:hover {
-   background-color:red;
-   color: #fff;
- }
-thead tr:hover {
-   background-color:red;
-   background-color: transparent;
-   color: inherit;
-} */
-/* .erro {
-   background-color: #ff8f8f;
-   
-} */
-/* .erro, .erro::-webkit-input-placeholder {
-   background-color: #e7c3c3;
-   color: red;
-} */
+.erro {
+   background-color: #e88b8f;
+}

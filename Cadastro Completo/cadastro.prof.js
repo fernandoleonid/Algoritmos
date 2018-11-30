@@ -42,6 +42,44 @@ const bd = [{
    cep: "13125401",
 }];
 
+// Consumir uma API pública 
+const url = 'https://viacep.com.br/ws/18135300/json/';
+fetch (url)
+   .then(res => res.json())
+   // .then(dados => console.log(dados));
+   .then(dados => preencheComApi(dados));
+
+const preencheComApi = (infCep) => {
+      txtBairro.value = infCep.bairro;
+      txtCidade.value = infCep.localidade;
+   }
+// Fim
+
+
+// const url='http://127.0.0.1:5001/novo/'
+// fetch(url, {
+//    method: 'post',
+//    mode: 'no-cors',
+//    headers: {
+//     //'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+//     "Content-type": "application/json; charset=UTF-8"
+//    },
+//    //body: 'nome=Maria&data_nacimento=19990609&matricula=123&cfp=29619819802'
+//    //JSON.stringify(
+//    body: JSON.stringify({
+//       'nome': "Maria",
+//       'data_nacimento': "19990609",
+//       'matricula': "125",
+//       'cpf': "29619819802"
+//    })
+// })
+// .then(function (data) {  
+//  console.log('Request success: ', data);  
+// })  
+// .catch(function (error) {  
+//  console.log('Request failure: ', error);  
+// });
+
 limparCampos = () =>{
    const campos = Array.from(document.querySelectorAll('input[type=text],select'));
    campos.map (e => e.value="");

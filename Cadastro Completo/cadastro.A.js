@@ -14,11 +14,9 @@ const btnCadastrar = document.getElementById('cadastrar');
 const btnAtualizar = document.getElementById('atualizar');
 const btnDeletar = document.getElementById('deletar');
 
-// variável simula o campo numeração automatica com chave primaria do BD.
 let codigo = 2;
 
-// Indice do aluno para atualizar
-let indiceAluno = -1;
+let indiceAtual = -1;
 
 const bd = [{
    codigo:1,
@@ -48,13 +46,40 @@ const bd = [{
 }];
 
 
-const cep = "06622160"
+// const teste2 = document.getElementById('estado');
 
-const url = `https://viacep.com.br/ws/${cep}/json/`
+// console.log(teste2.value);
+// console.log(teste2.options);
 
-fetch(url)
-   .then(res => res.json())
-   .then(dado => console.log(dado.bairro));
+// const url = 'https://viacep.com.br/ws/18135300/json/';
+// fetch (url)
+//    .then(res => res.json())
+//    .then(dados => console.log(dados.bairro))
+
+// const url='http://127.0.0.1:5001/novo/'
+// fetch(url, {
+//    method: 'post',
+//    mode: 'no-cors',
+//    headers: {
+//     //'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+//     "Content-type": "application/json; charset=UTF-8"
+//    },
+//    //body: 'nome=Maria&data_nacimento=19990609&matricula=123&cfp=29619819802'
+//    //JSON.stringify(
+//    body: JSON.stringify({
+//       'nome': "Maria",
+//       'data_nacimento': "19990609",
+//       'matricula': "125",
+//       'cpf': "29619819802"
+//    })
+// })
+// .then(function (data) {  
+//  console.log('Request success: ', data);  
+// })  
+// .catch(function (error) {  
+//  console.log('Request failure: ', error);  
+// });
+
 
 
 const mostrarBD = () => {
@@ -82,36 +107,9 @@ const limparCampos = () => {
    Array.from(rdoSexo).map (opt => opt.checked = false);
 };
 
-const emailValido = (email) => {
-   
-   const er = /^([a-z][a-z0-9._-]+@([a-z0-9]+[.])([a-z]+[.]?)+)[a-z]$/
-   console.log (er.test(email));
-   return er.test(email);
-
-}
-
-const verificarCampos = () => {
-   
-   let semErro = true;
-   if (txtNome.value.trim() == ""){
-      txtNome.classList.add ("erro");
-      semErro = false;
-   };
-   if (!emailValido(txtEmail.value)){
-      txtEmail.classList.add ("erro");
-      semErro = false;
-   };
-   if (txtCelular.value.trim() == ""){
-      txtCelular.classList.add ("erro");
-      semErro = false;
-   };
-
-   return semErro;
-};
 
 const cadastrarAluno = () => {
-   
-   if (verificarCampos()){
+
       codigo++;
       const novoAluno = {
          codigo:codigo,
@@ -130,41 +128,10 @@ const cadastrarAluno = () => {
       bd.push (novoAluno);
       limparCampos();
       mostrarBD();
-   }else{
-      alert ("Verifique os campos em destaque!");
-   }
-}
-
-
-const atualizarAluno = () =>{
-
-   const codigo = bd[indiceAluno].codigo;
-   bd.splice (indiceAluno,1, {
-      codigo: codigo,
-      nome:txtNome.value,
-      sexo:rdoSexo[0].checked ? "m":"f",
-      email: txtEmail.value,
-      celular: txtCelular.value,
-      end:txtEnd.value,
-      numero: txtNumero.value,
-      Bairro: txtBairro.value,
-      Cidade: txtCidade.value,
-      uf: cmbEstado.value,
-      cep: txtCep.value
-   });
-
-   mudarEstado("normal");
-   limparCampos();
-   mostrarBD();
 };
 
-const cadastrarSalvar = () => {
-   if (btnCadastrar.textContent == "Salvar"){
-      atualizarAluno();
-   }else{
-      cadastrarAluno();
-   };
-};
+
+
 
 const mudarEstado = (estado) =>{
    if (estado == "normal"){
@@ -175,10 +142,10 @@ const mudarEstado = (estado) =>{
       btnDeletar.style.display = "none";
       btnCadastrar.textContent = "Salvar";
       btnAtualizar.textContent = "Cancelar";
-   }
-}
+   };
+};
 
-const atualizarNome = () => {
+const atualizar = () => {
 
    const codigo = prompt ('Digite o código para modificar');
 
@@ -197,92 +164,67 @@ const atualizarNome = () => {
       cmbEstado.selectedIndex = iEstado;
       txtCep.value = bd[i].value; 
 
-   }
+   };
 
 
-   indiceAluno = bd.findIndex(aluno => aluno.codigo == codigo);
+   indiceAtual = bd.findIndex(aluno => aluno.codigo == codigo);
 
-   if (indiceAluno == -1){
+   if (indiceAtual == -1){
       alert ("Aluno não encontrado");
    }else{
-      preencherCampos(indiceAluno);
+      preencherCampos(indiceAtual);
       mostrarBD();
       mudarEstado("edição");
-   }
+   };
    
-}
-
-const deletarNome = () => {
-   const codigo = prompt ('Digite o código para deletar');
-   const indiceDeletar = bd.findIndex(aluno => aluno.codigo == codigo);
-   bd.splice(indiceDeletar,1);
-   mostrarBD();
 };
 
+const deletarNome = () => {
+
+
+};
 
 const cancelarAtualizacao = () => {
    mudarEstado("normal");
-   limparCampos(); 
+   limparCampos();
 };
 
 const atualizarCancelar = () => {
    if (btnAtualizar.textContent == "Cancelar"){
       cancelarAtualizacao();
    }else{
-      atualizarNome();
+      atualizar();
    };
 };
 
-const removerErro = (elemento) => {
+const atualizarAluno = () => {
+   const aluno = bd[indiceAtual] ;
+   aluno.nome = txtNome.value;
+   aluno.sexo = rdoSexo[0].checked ? "m":"f";
+   aluno.email = txtEmail.value;
+   aluno.celular = txtCelular.value;
+   aluno.end = txtEnd.value;
+   aluno.numero = txtNumero.value;
+   aluno.Bairro = txtBairro.value;
+   aluno.Cidade = txtCidade.value;
+   aluno.uf = estado.value;
+   aluno.cep = txtCep.value;
+
+   mudarEstado("normal");
+   limparCampos();
+   mostrarBD();
    
-   elemento.classList.remove ("erro");
-
-}
-
-const mascNome = () => {
-
-   let texto = txtNome.value;
-
-   texto = texto.replace(/[^a-zA-Z À-ÿ]/g,"");
-
-   txtNome.value = texto;
-}
-
-
-const mascCelular = () => {
-   
-   txtCelular.maxLength = "14";
-
-   let texto = txtCelular.value
-
-   texto = texto.replace(/[^0-9]/g,"");
-   texto = texto.replace(/(.)/,"($1");
-   texto = texto.replace(/(...)/,"$1)");
-   texto = texto.replace(/(.{9})/,"$1-")
-
-   txtCelular.value = texto;   
-}
-
-const mascCep = () => {
-
-   txtCep.maxLength = 9;
-   let texto = txtCep.value;
-
-   texto = texto.replace(/[^0-9]/g,"");
-   texto = texto.replace(/(.{5})/,"$1-");
-
-   txtCep.value = texto;   
-}
+};
+const cadastrarSalvar = () => {
+  if (btnCadastrar.textContent == "Salvar"){
+     atualizarAluno();
+  } else {
+     cadastrarAluno();
+  }
+};
 
 mostrarBD();
 //Eventos
 btnCadastrar.addEventListener('click',cadastrarSalvar);
 btnAtualizar.addEventListener('click',atualizarCancelar);
 btnDeletar.addEventListener('click',deletarNome);
-txtNome.addEventListener("change",() => removerErro(txtNome));
-txtEmail.addEventListener("change",() => removerErro(txtEmail));
-txtCelular.addEventListener("change",() => removerErro(txtCelular));
-txtNome.addEventListener("keyup",mascNome);
-txtCelular.addEventListener("keypress",mascCelular);
-txtCep.addEventListener("keypress",mascCep);
-
