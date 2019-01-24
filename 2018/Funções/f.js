@@ -36,7 +36,8 @@ const txtResultado = document.getElementById("resultado");
 //     }
 // }
 
-const fatorial = a => a <=2 ? a : a * fatorial (a - 1);
+const fatorial = numero => 
+   numero <=2 ? numero : numero * fatorial (numero - 1);
 
 
 btnFat.addEventListener('click',function(){

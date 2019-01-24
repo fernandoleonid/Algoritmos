@@ -2,12 +2,7 @@
 let a = Array.from(Array(100).keys());
 
 const preencherTextArea = (vet, txt) =>{
-
     vet.map (e => txt.value += e + "\n")
-
-    // for (let i=0; i<vet.length; i++){
-    //     txt.value += vet[i] + "\n";
-    // }
 }
 
 const m7 = a.map(e  => e * 7);
