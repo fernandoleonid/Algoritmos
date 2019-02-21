@@ -78,10 +78,10 @@ REDUCE - Retorna um único valor
 const somaNumerosD = numeros.reduce((soma,valor) => soma + valor);
 
 
-// console.log(numeros);
-// console.log ( maioresQue20I() );
-// console.log (maioresQue20D);
-// console.log (numerosPares);
-// console.log (numerosImpares);
-// console.log (somaNumeros());
-// console.log ( somaNumerosD);
+console.log(numeros);
+console.log ( maioresQue20I() );
+console.log (maioresQue20D);
+console.log (numerosPares);
+console.log (numerosImpares);
+console.log (somaNumeros());
+console.log ( somaNumerosD);
