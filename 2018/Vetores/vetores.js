@@ -1,4 +1,4 @@
-const btnVetores = document.getElementById("vetores");
+﻿const btnVetores = document.getElementById("vetores");
 
 btnVetores.addEventListener('click',function(){
     

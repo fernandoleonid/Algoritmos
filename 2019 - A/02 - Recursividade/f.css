@@ -1,5 +1,5 @@
 *{
-    margin: 5px;
+    margin: 10px;
 }
 header{
     text-align: center;
@@ -13,3 +13,16 @@ section{
     background: #c4d2f2;
     box-shadow:3px 3px 5px #000000;
 }
+dialog{
+   margin-left: auto;
+   margin-right: auto;
+}
+
+dialog::backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.6);
+ }
