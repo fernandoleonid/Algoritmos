@@ -5,91 +5,91 @@
    </head>
    <body>
       <div id=form>
-      <header>
-         <h1> Cadastro de Alunos  </h1>
-      </header>  
-      <div class='grupos'> 
-         <div class='grupo'>
-            <label> Nome: </label>
-            <input type="text" id="nome" />
+         <header>
+            <h1> Cadastro de Alunos  </h1>
+         </header>  
+         <div class='grupos'> 
+            <div class='grupo'>
+               <label> Nome: </label>
+               <input type="text" id="nome" />
+            </div>
          </div>
-      </div>
-      <div class='grupos'>
-         <div class='grupo'>
-            <label>Sexo: </label>
-            <label><input type="radio" name="sexo" id="masculino"> Masculino</label>
-            <label><input type="radio" name="sexo" id="feminino" checked> Feminino</label>
+         <div class='grupos'>
+            <div class='grupo'>
+               <label>Sexo: </label>
+               <label><input type="radio" name="sexo" id="masculino"> Masculino</label>
+               <label><input type="radio" name="sexo" id="feminino" checked> Feminino</label>
+            </div>
          </div>
-      </div>
-      <div class='grupos'>
-         <div class='grupo'>
-            <label>E-mail:</label>
-            <input type="text" id="email"/>
+         <div class='grupos'>
+            <div class='grupo'>
+               <label>E-mail:</label>
+               <input type="text" id="email"/>
+            </div>
+            <div class='grupo'>
+               <label>Celular:</label>
+               <input type="text" id="celular"/>
+            </div>
          </div>
-         <div class='grupo'>
-            <label>Celular:</label>
-            <input type="text" id="celular"/>
+         <div class='grupos'>
+            <div class="grupo tam2">
+               <label>Endereço:</label>
+               <input type="text" id="endereco"/>
+            </div>
+            <div class='grupo tam0'>
+               <label>Numero:</label>
+               <input type="text" id="numero"/>
+            </div>
+            <div class='grupo'>
+               <label>Bairro:</label>
+               <input type="text" id="bairro" />
+            </div>
          </div>
-      </div>
-      <div class='grupos'>
-         <div class="grupo tam2">
-            <label>Endereço:</label>
-            <input type="text" id="endereco"/>
+         <div class='grupos'>
+            <div class="grupo" >
+               <label>Cidade:</label>
+               <input type="text" id="cidade"/>
+            </div>
+            <div class="grupo">
+               <label>Estado:</label>
+                  <select name="estado" id="estado">
+                     <option value="SP">SP</option>
+                     <option value="RJ">RJ</option>
+                     <option value="MG">MG</option>
+                     <option value="ES">ES</option>
+                  </select>
+            </div>
+            <div class="grupo">
+               <label>CEP:</label>
+               <input type="text" id="cep"/>
+            </div>
          </div>
-         <div class='grupo tam0'>
-            <label>Numero:</label>
-            <input type="text" id="numero"/>
-         </div>
-         <div class='grupo'>
-            <label>Bairro:</label>
-            <input type="text" id="bairro" />
-         </div>
-      </div>
-      <div class='grupos'>
-         <div class="grupo" >
-            <label>Cidade:</label>
-            <input type="text" id="cidade"/>
-         </div>
-         <div class="grupo">
-            <label>Estado:</label>
-               <select name="estado" id="estado">
-                  <option value="SP">SP</option>
-                  <option value="RJ">RJ</option>
-                  <option value="MG">MG</option>
-                  <option value="ES">ES</option>
-               </select>
-         </div>
-         <div class="grupo">
-            <label>CEP:</label>
-            <input type="text" id="cep"/>
-         </div>
-      </div>
 
-      <div class="btn">
-         <button id='cadastrar'>Cadastrar nome</button>
-         <button id='atualizar'>Atualiza nome</button>
-         <button id='deletar'>Deleta nome</button>
-      </div>
+         <div class="btn">
+            <button id='cadastrar'>Cadastrar nome</button>
+            <button id='atualizar'>Atualiza nome</button>
+            <button id='deletar'>Deleta nome</button>
+         </div>
 
-      <!--Tabela para visualizar as informações-->
-      <div class='grupos'>
+         <!--Tabela para visualizar as informações-->
+         <div class='grupos'>
 
-         <table >
-            <thead>
-               <tr>
-                  <th>Código</th>
-                  <th>Nome</th>
-                  <th>Sexo</th>
-                  <th>E-mail</th>
-                  <th>Celular</th>
-               </tr>
-            </thead>
-            <tbody id='bd'>
-            </tbody>
-         </table> 
+            <table >
+               <thead>
+                  <tr>
+                     <th>Código</th>
+                     <th>Nome</th>
+                     <th>Sexo</th>
+                     <th>E-mail</th>
+                     <th>Celular</th>
+                  </tr>
+               </thead>
+               <tbody id='bd'>
+               </tbody>
+            </table> 
 
-      </div>
-   </div> 
+         </div>
+      </div> 
       <script src="./cadastro.js"></script>
    </body>
 </html>

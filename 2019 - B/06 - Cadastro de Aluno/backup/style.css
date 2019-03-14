@@ -1,0 +1,156 @@
+:root {
+   --margin-padrao: 30px;
+   --cor-principal: #1668C4;
+   --cor-escura: #0A305A;
+   --cor-clara: #BBDEFB;
+   --font-principal: arial;
+}
+body{
+   background-color: #019BD3;
+}
+
+.conteiner-alunos{
+   width: 70vw;
+   height: 50vh;
+   background-color:#FFFFFF;
+   margin: 10vh auto 0px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 20px black;
+   overflow: hidden;
+}
+.titulo-form {
+   width: 100%;
+   height: 8vh;
+   background: #1668C4;
+   border-radius: 5px 5px 0px 0px;
+   text-align: center;
+   font: bold calc(6px + 1vw + 1vh)/8vh var(--font-principal);
+   color: white;
+   text-shadow: 3px 3px 10px black;
+}
+.controle{
+   display: flex;
+   justify-content: space-between;
+   margin: var(--margin-padrao);
+   align-items: center;
+}
+.controle div{
+   font: bold calc(6px + 1vw + 1vh)/8vh var(--font-principal);
+   color: var(--cor-principal);
+   text-shadow: 1px 1px 3px black;
+}
+.controle button {
+   height:  5vh;
+}
+
+.botao {
+   background-color: #fff;
+   border: 1px solid var(--cor-principal);
+   border-radius: 5px;
+   box-shadow: 0px 0px 3px black;
+   font: bold calc(2px + 1vw) var(--font-principal);
+   color: var(--cor-principal);
+   user-select: none;
+   cursor: pointer;
+}
+
+.botao:hover{
+   background-color: var(--cor-principal);
+   color: white;
+}
+
+.botao:active{
+   background-color: var(--cor-escura);
+}
+
+.conteiner-tabela{
+   margin: var(--margin-padrao);
+}
+
+.conteiner-tabela table{
+   background-color: var(--cor-principal);
+   color: white;
+   border-radius: 5px;
+   width: 100%;
+}
+.conteiner-tabela tbody tr{
+   background-color: var(--cor-clara);
+   font: bold calc(8px + 0.5vw) var(--font-principal);
+   color: black;
+}
+
+.conteiner-tabela tbody td{
+   border-radius: 5px;
+}
+
+.conteiner-tabela tbody tr:hover{
+   background-color:var(--cor-escura);
+   color: white;
+   user-select: none;
+}
+
+.conteiner-modal{
+   background-color: #000000AF;
+   width: 100vw;
+   height: 100vh;
+   top: 0px;
+   left: 0px;
+   position: fixed;
+   z-index: -1;
+   opacity: 0;
+}
+
+.conteiner-modal.exibirModal {
+   z-index: 1000;
+   opacity: 1;
+}
+
+.modal {
+   background-color:white;
+   width: 50vw;
+   margin: 10vh auto;
+   border-radius: 5px;
+   box-shadow: 0px 0px 20px black; 
+}
+
+.formulario{
+   display: grid;
+   grid-template-columns: 4fr 1fr 1fr 3fr;
+   grid-template-areas: 
+      "nome nome nome nome"
+      "email email email celular"
+      "endereco numero bairro bairro"
+      "cidade cidade estado cep";
+   grid-gap: 15px;
+   margin: var(--margin-padrao) 
+}
+
+#nome{  grid-area: nome; }
+#email{  grid-area: email; }
+#celular{  grid-area: celular; }
+#endereco{ grid-area: endereco; }
+#numero{ grid-area: numero; }
+#bairro{ grid-area: bairro; }
+#cidade{ grid-area: cidade; }
+#estado{ grid-area: estado; }
+#cep{ grid-area: cep;}
+
+
+.formulario input {
+   width: 100%;
+   height: 30px;
+   text-indent: 1ch;
+   font: normal calc(2px + 1vw) arial;
+   border-radius: 5px;
+   border: 1px solid white;
+   box-shadow: 0px 0px 3px #0000005f;
+}
+
+.acao-formulario{
+   display: flex;
+   justify-content: center;
+}
+
+.acao-formulario button{
+   margin: 20px;
+}

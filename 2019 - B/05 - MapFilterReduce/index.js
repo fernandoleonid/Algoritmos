@@ -1,5 +1,68 @@
 const numeros = [8,71,23,2,18,17,200];
 
+const alunos = [
+   {nome:"Jose",idade:"50",cidade:"Jandira",nota:"85",cel:"98914-1234"},
+   {nome:"Ana",idade:"15",cidade:"Barueri",nota:"15",cel:"94578-1234"},
+   {nome:"Marta",idade:"20",cidade:"Jandira", nota:"65",cel:"94788-4157"},
+   {nome:"Andre",idade:"10",cidade:"Itapevi",nota:"25",cel:"91111-9999"},
+   {nome:"Murilo",idade:"90",cidade:"Itapevi",nota:"50",cel:"92222-3333"},
+   {nome:"Julia",idade:"13",cidade:"Barueri",nota:"5",cel:"95555-6666"},
+   {nome:"Maria",idade:"6",cidade:"Jandira",nota:"60",cel:"97412-9874"}
+]
+
+alunos[4].cidade = "Jandira";
+console.log ("#######################")
+console.table ( alunos );
+console.log ("#######################")
+
+
+const alunosCidade = (cidade) => alunos.filter((aluno) => aluno.cidade == cidade);
+
+const alunosItapevi = alunosCidade("Itapevi");
+
+const alunosMaiores18 = alunos.filter( (aluno) => aluno.idade >= 18);
+const alunosMenores18 = alunos.filter( (aluno) => aluno.idade < 18);
+const alunosCel = alunos.map( (aluno) => ( {nome:aluno.nome,celular:aluno.cel} ) );
+const alunosJandiraCel = alunos.filter( (aluno) => aluno.cidade == "Jandira")
+                         .map( aluno => ({nome:aluno.nome,celular:aluno.cel}));
+
+const compose = (...functions) => ini => 
+   functions.reduceRight((value, func) => func(value), ini);
+const pipe = (...functions) => ini => 
+   functions.reduce((value, func) => func(value), ini);
+
+// const f1 = (r,c) => r.filter( aluno => aluno.cidade == "Jandira")
+// const f2 = (r) => r.map( aluno => ({nome:aluno.nome,celular:aluno.cel}))
+
+const f1 = a => a + 100 ;
+const f2 = a => a / 2;
+
+const alunosJCel = pipe(f1,f2);
+
+console.log ("###############################")
+console.log (alunosJCel(10));
+
+
+// alunosJandiraCelular = ()
+
+const qtdAlunos = alunos.length;
+const mediaEscola = alunos.reduce( (soma,aluno) => soma + parseInt(aluno.nota),0 ) / qtdAlunos;
+
+const alunosBarueri = alunos.filter( (aluno) => aluno.cidade == "Barueri");
+
+const mediaBarueri = alunosBarueri.reduce( (soma, aluno) => soma + aluno.nota, 0) / alunosBarueri.length;
+
+
+
+
+console.table(alunosItapevi);
+console.table(alunosMaiores18);
+console.table(alunosMenores18);
+console.table(alunosCel);
+console.table(alunosJandiraCel);
+console.log ("Média da escola:" , mediaEscola);
+
+
 // Situação: Criar um novo vetor números adicionando
 //          5 ano vetor original.
 

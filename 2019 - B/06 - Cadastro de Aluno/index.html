@@ -1,0 +1,79 @@
+<html>
+   <head>
+      <title> Controle Escolar</title>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="conteiner-alunos">
+         <div class="titulo-formulario">
+            Escola técnica Nova Geração
+         </div>
+         <div class="controle">
+            <div>Alunos</div>
+            <button id="novoAluno" class="botao">Novo Aluno</button>
+         </div>
+         <div class="conteiner-tabela">
+            <table>
+               <thead>
+                  <tr>
+                     <th>Código</th>
+                     <th>Aluno</th>
+                     <th>E-mail</th>
+                     <th>Celular</th>
+                     <th>Cidade</th>
+                     <th>Ações</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                  </tr>
+                  <tr>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                     <td>teste</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+
+      </div>
+
+      <div class="conteiner-modal">
+         <div class="modal">
+            <div class="titulo-formulario">
+               Cadastro de Alunos
+            </div>
+            <div class="formulario">
+                  <input type="text" id="nome" placeholder="Primeiro Nome"/>
+                  <input type="text" id="email" placeholder="Endereço de email"/>
+                  <input type="text" id="celular" placeholder="Celular"/>
+                  <input type="text" id="endereco" placeholder="Endereço"/>
+                  <input type="text" id="numero" placeholder="Numero"/>
+                  <input type="text" id="bairro" placeholder="Bairro"/>
+                  <input type="text" id="cidade" placeholder="Cidade"/>
+                  <input type="text" id="estado" placeholder="Estado"/>
+                  <input type="text" id="cep" placeholder="CEP"/>
+               </div>
+               <div class="acao-formulario">
+                  <button class="botao">Salvar</button>
+                  <button class="botao" id="fechar">Fechar</button>
+               </div>
+            </div>   
+         </div>
+      </div>
+
+
+      <script src="./cadastro.js"></script>
+   </body>
+
+</html>

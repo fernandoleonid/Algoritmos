@@ -1,0 +1,149 @@
+body{
+   background-color: #019BD3;
+}
+
+.conteiner-alunos{
+   background-color: white;
+   width: 70vw;
+   height: 50vh;
+   margin: 10vh auto;  
+   border-radius: 5px;
+   box-shadow: 1px 1px 20px black;
+}
+
+.titulo-formulario{
+   width: 100%;
+   height: 8vh;
+   background: #1668C4;
+   border-radius: 5px 5px 0px 0px;
+   font: bold 20px/8vh arial;
+   text-align: center;
+   color: white;
+}
+
+.controle{
+   display: flex;
+   justify-content: space-between;
+   margin: 30px;
+}
+
+.controle div {
+   color: #1668C4;
+   font: bold 20px arial;
+   text-shadow: 1px 1px 2px black;
+}
+.controle button{
+   width: 100px;
+   height: 50px;
+}
+
+.botao{
+   background-color: white;
+   border: 1px solid #1668C4;
+   border-radius: 5px;
+   font: bold 15px arial;
+   color: #1668C4;
+   box-shadow: 0px 0px 3px black;
+   cursor: pointer;
+}
+.botao:hover{
+   background-color: #1668C4;
+   color: white;
+}
+
+.conteiner-tabela{
+   margin: 30px;
+}
+
+.conteiner-tabela table{
+   background-color: #1668C4;
+   color: white;
+   border-radius: 5px;
+   width: 100%;
+}
+
+.conteiner-tabela thead tr {
+   font: bold 16px arial;
+}
+
+.conteiner-tabela tbody tr {
+   background-color: #BBDEFB;
+   color: black;
+   font: normal 14px arial;
+}
+
+.conteiner-tabela tbody td{
+   border-radius: 5px;
+   text-indent: 1ch;
+}
+
+.conteiner-tabela tbody tr:hover{
+   background-color: #0A305A;
+   color: white;
+}
+
+.conteiner-modal{
+   background-color: #000000AF;
+   width: 100vw;
+   height: 100vh;
+   top: 0px;
+   left: 0px;
+   position: fixed;
+   z-index: -1;
+   opacity: 0;
+}
+
+.conteiner-modal.exibirModal {
+   z-index: 100;
+   opacity: 1;
+}
+
+.modal{
+   background-color:white;
+   width: 50vw;
+   height: 50vh;
+   margin: 10vh auto;
+   border-radius: 5px;
+}
+
+.formulario{
+   display: grid;
+   grid-template-columns: 4fr 1fr 1fr 3fr;
+   grid-template-areas: 
+      "nome nome nome nome"
+      "email email email celular"
+      "endereco numero bairro bairro"
+      "cidade cidade estado cep";
+   grid-gap: 15px;
+   margin: 30px; 
+}
+
+#nome{  grid-area: nome; }
+#email{  grid-area: email; }
+#celular{  grid-area: celular; }
+#endereco{ grid-area: endereco; }
+#numero{ grid-area: numero; }
+#bairro{ grid-area: bairro; }
+#cidade{ grid-area: cidade; }
+#estado{ grid-area: estado; }
+#cep{ grid-area: cep;}
+
+
+.formulario input {
+   width: 100%;
+   height: 30px;
+   text-indent: 1ch;
+   font: normal 15px arial;
+   border-radius: 5px;
+   border: 1px solid white;
+   box-shadow: 0px 0px 3px #0000005f;
+}
+
+.acao-formulario{
+   display: flex;
+   justify-content: center;
+}
+
+.acao-formulario button{
+   margin: 20px;
+}
