@@ -1,0 +1,184 @@
+body{
+   background-color: #019BD3;
+   font-size: 100%;
+   /* background-size: 100% 100%; */
+}
+
+.cadastro-form  {
+   background-color: white;
+   width: 80vw;
+   margin: 10vh auto;
+   border-radius: 5px;
+   box-shadow: 0px 0px 20px black;  
+   overflow: hidden;
+}
+
+.titulo{
+   background-color: #1668C4;
+   height: 45px;
+   text-align: center;
+   font: bold calc(12px + 1vw)/45px sans-serif ;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   box-shadow: 1px 0px 5px black;
+   color: white;
+   text-shadow: 1px 0px 1x white;
+}
+
+.subtitulo{
+   display: flex;
+   padding: 2vw 2vw 0 2vw;
+   justify-content: space-between;
+}
+.subtitulo > div{
+   font: bold calc(12px + 1vw)/45px sans-serif ;
+   color: #1668C4;
+   text-shadow: 1px 1px 1px black;;
+}
+
+/* input:required:invalid { background-color: red}
+input:required:valid {background-color: royalblue} */
+
+.conteiner-modal{
+   width: 100vw;
+   height: 100vh;
+   background-color: #00000077;
+   top:0px;
+   left: 0px;
+   position: fixed;
+   z-index: -5;
+   opacity:0;
+   transition: all 0.5s;
+}
+
+.conteiner-modal.exibirModal{
+   opacity:1;
+   z-index: 2000;
+   transition: all 0.5s;
+}
+
+.modal {
+   background-color: white;
+   width: 50vw;
+   margin: 10vh auto;
+   border-radius: 5px;
+   box-shadow: 0px 0px 20px black;  
+   overflow: hidden;
+
+}
+.form{
+   display: grid;
+   grid-template-columns: 3fr 1fr 1fr 2fr;
+   grid-template-areas: 
+      "nome nome nome nome"
+      "email email celular celular"
+      "endereco numero bairro bairro"
+      "cidade cidade estado cep";
+   gap: 10px;
+   padding: 2vw;
+}
+
+#nome{  grid-area: nome; }
+#email{  grid-area: email; }
+#celular{  grid-area: celular; }
+#endereco{ grid-area: endereco; }
+#numero{ grid-area: numero; }
+#bairro{ grid-area: bairro; }
+#cidade{ grid-area: cidade; }
+#estado{ grid-area: estado; }
+#cep{ grid-area: cep;}
+
+
+.form > input {
+   width: 100%;
+   height: 35px;
+   padding-left: 15px;
+   font: normal calc(2px + 1vw) arial;
+   border-radius: 5px;
+   border: 1px solid #dee7eb;
+   /* box-shadow: 0px 0px 3px black; */
+}
+
+.form > input:hover{
+   box-shadow: 0px 0px 3px #97a9b2;
+}
+
+.bancodados{
+   padding: 2vw;
+}
+
+.tabela{
+   width: 100%;
+   background-color: #1668C4;
+   border-radius: 5px;
+}
+
+th{
+   padding: 5px;
+   color: white;
+   font: bold calc(3px + 1vw) sans-serif;
+}
+
+
+td{
+   /* background-color: #549cec; */
+   border-radius: 5px;
+   border: 1px solid #0a2f59;
+   /* padding-left: 5px; */
+   color: black;
+   font: bold calc(2px + 1vw) sans-serif;
+}
+.registros > tr {
+   background-color: #92bcec;
+}
+
+.registros > tr:hover {
+   background-color: #549cec;
+}
+
+.acao {
+   display: flex;
+   padding: 2vw;
+   justify-content: center;
+}
+
+
+.botao {
+   font: bold calc(2px + 1vw) sans-serif;
+   background-color: #ffffff;
+   border: 1px solid #0058a0;
+   border-radius: 5px;
+   color: #0066b8;
+   box-shadow: 0px 0px 3px black;
+   cursor: pointer;
+   user-select: none;
+}
+
+.acoes{
+   width: 11vw;
+   text-align: center;
+}
+
+#excluir, #editar {
+   margin: 1px;
+}
+
+.botao:hover{
+   background-color: #0066b8;
+   color: #ffffff;
+}
+
+#editar:hover{
+   background-color:green;
+   color: #ffffff;
+}
+
+#excluir:hover{
+   background-color: red;
+   color: #ffffff;
+}
+
+button:active{
+   /* box-shadow: 1px 1px 3px black; */
+   margin-left: 10px;
+}

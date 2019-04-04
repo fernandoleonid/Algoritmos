@@ -1,0 +1,7 @@
+.conteiner-heroi > div {  
+   display: grid;
+   grid-template-rows: 1fr 5fr 1fr;
+   align-items: center;
+   text-align: center;
+   border: 1px solid black;
+}
