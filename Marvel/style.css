@@ -1,7 +1,20 @@
+.conteiner-heroi{
+   display: flex;
+   height: 75vh;
+   width: 75vw;
+   overflow: hidden;
+   margin: 0 auto;
+}
+
 .conteiner-heroi > div {  
    display: grid;
-   grid-template-rows: 1fr 5fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
    align-items: center;
    text-align: center;
-   border: 1px solid black;
+   /* border: 1px solid black; */
+}
+
+.conteiner-heroi > div .imagem{  
+   width: 75vw;
+   
 }

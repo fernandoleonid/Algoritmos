@@ -15,7 +15,7 @@ const listarHerois = () => {
 
    limparConteiner()
 
-   var qwe = fetch(URL)
+   var marvel = fetch(URL)
     .then(response => response.json())
     .then(response => response.data.results.map( heroi => exibirHeroi(heroi)));
 };

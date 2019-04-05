@@ -1,5 +1,3 @@
-
-
 const $modal = document.querySelector( ".conteiner-modal" );
 const $novo = document.querySelector ( "#novo" );
 const $fechar = document.querySelector ( "#fechar" );
@@ -77,10 +75,26 @@ const salvarAluno = () => {
 const mascaraCelular = texto => filtrarNumero(texto)
                               .replace(/(.)/,"($1")
                               .replace(/(.{3})(.)/,"$1)$2")
-                              .replace(/(.{9})(.)/,"$1-$2")
+                              .replace(/(.{9})(.)/,"$1-$2");
 
-const encontrarEndereco = cep => $endereco.value = $cep.value.length;
+const preencherCampos = endereco => {
+   $endereco.value = endereco.logradouro;
+   $bairro.value = endereco.bairro;
+   $cidade.value = endereco.localidade;
+   $estado.value = endereco.uf;
+}
 
+const encontrarEndereco = cep => {
+
+   if ( cep.length == 9 ) {
+
+      const url = `https://viacep.com.br/ws/${cep}/json/`
+      const viacep = fetch (url)
+               .then ( response => response.json() )
+               .then ( response => preencherCampos(response) );
+
+   }
+}
 limitarCaracteres()
 
 $novo.addEventListener ("click", () => abrirModal($modal));
@@ -95,4 +109,4 @@ $cidade.addEventListener("keyup", () => $cidade.value = filtrarTexto($cidade.val
 $estado.addEventListener("keyup", () => $estado.value = mascaraEstado($estado.value));
 $celular.addEventListener("keyup", () => $celular.value = mascaraCelular($celular.value));
 $cep.addEventListener("keyup", () => $cep.value = mascaraCep($cep.value));
-$cep.addEventListener("keyup", encontrarEndereco);
+$cep.addEventListener("keyup", () => encontrarEndereco($cep.value));
