@@ -140,9 +140,7 @@ const editarExcluir = (elemento) => {
       case "excluir":
          alert (`Deseja excluir o elemento ${elemento.getAttribute("codigo")}?`)
          break;
-   }
-   
-   
+   }   
 };
 
 const salvarNovoAluno = () => {
