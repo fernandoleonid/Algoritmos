@@ -35,7 +35,6 @@ const slideShow = imagens => {
 
       $conteinerHeroi.insertAdjacentElement('beforeend', heroi);
    })   
-
 }
 
 const proximo = () =>{
